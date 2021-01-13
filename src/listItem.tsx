@@ -4,19 +4,23 @@ import { View, Text, Image} from "react-native";
 
 const Item: FC<NewsType> = (props) => {
     return(
-        <View>
-            {/* <Image
-        style={{height:10}}
-        resizeMode="contain"
-        source={{
-            uri:{{props.uri}}
-        }}
-      /> */}
+        <View style={{flexDirection: "row", alignContent: "center", alignItems:"center"}} >
             <View>
-                <Text>{props.title}</Text>
+            <Image
+                style={{backgroundColor: "blue", height:50, width:50}}
+                resizeMode="contain"
+                source={{       
+                uri: props.uri,
+                }}
+            />
             </View>
             <View>
-                <Text>{props.category}</Text>
+                <View>
+                    <Text style={{fontSize: 25, fontWeight: "bold",flex:1}}>{props.title}</Text>
+                </View>
+                <View>
+                    <Text style={{flex:1}}>{props.category}</Text>
+                </View>
             </View>
         </View>
     );

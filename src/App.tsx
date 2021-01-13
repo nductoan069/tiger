@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
 
 function App() {
   return (
+    <View>
     <View style={styles.container}>
       <Image
         style={styles.image}
@@ -35,17 +36,22 @@ function App() {
           uri: 'https://reactnative.dev/img/tiny_logo.png',
         }}
       />
-      <SafeAreaView style={[styles.description, {flex:2}]}>
+      <View style={[styles.description, {flex:2}]}>
         <Text style={[styles.titletext, {flex:2}]}>Hello World!</Text>
         <Text style={[styles.category, {flex:1}]}>Hello World!</Text>
-      <FlatList
+      </View>
+    
+      
+    </View>
+    <SafeAreaView>
+    <FlatList
         data={NewsItem}
         renderItem={({item})=>(
           <Item id={item.id} uri={item.uri} title={item.title} category={item.category} />
         )}
       />
-      </SafeAreaView>
-      
+        </SafeAreaView>
+
     </View>
   );
 };
