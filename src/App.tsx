@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, FlatList, SafeAreaView } from "react-native";
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+} from "react-native";
+
 import Item from "./listItem";
 import {NewsItem} from "./data";
 
