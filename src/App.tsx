@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, FlatList, SafeAreaView } from "react-native";
+import Item from "./listItem";
+import {NewsItem} from "./data";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,8 +11,6 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 50, 
-    height: 100, 
     backgroundColor: "blue", 
     flex: 1
   },
@@ -27,9 +27,8 @@ const styles = StyleSheet.create({
 
 function App() {
   return (
-    <View
-      style={styles.container}
-    >
+    <View>
+    <View style={styles.container}>
       <Image
         style={styles.image}
         resizeMode="contain"
@@ -39,9 +38,20 @@ function App() {
       />
       <View style={[styles.description, {flex:2}]}>
         <Text style={[styles.titletext, {flex:2}]}>Hello World!</Text>
-        <Text style={[styles.category, {flex:10}]}>Hello World!</Text>
+        <Text style={[styles.category, {flex:1}]}>Hello World!</Text>
       </View>
+    
       
+    </View>
+    <SafeAreaView>
+    <FlatList
+        data={NewsItem}
+        renderItem={({item})=>(
+          <Item id={item.id} uri={item.uri} title={item.title} category={item.category} />
+        )}
+      />
+        </SafeAreaView>
+
     </View>
   );
 };
