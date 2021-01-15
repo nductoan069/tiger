@@ -1,26 +1,17 @@
 import React, { FC } from "react";
 import {
-  Text,
-  StyleSheet,
   FlatList,
   View,
 } from "react-native";
 
 import Item from "./listItem";
 import newsItems from "./data";
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-    textAlign: 'center',
-  },
-});
+import Label from '../../atoms/Label';
 
 const Home: FC = () => {
   return(
     <View>
-      <Text style={styles.title}>New Gears</Text>
+      <Label>New Gears</Label>
       <FlatList
         data={newsItems}
         renderItem={({item}) => (
