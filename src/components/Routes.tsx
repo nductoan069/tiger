@@ -6,7 +6,7 @@ import {
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Topics from "./pages/Topics";
+import Topics from "../containers/Topics";
 import NoMatch from "./pages/NoMatch";
 
 function Routes() {

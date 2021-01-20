@@ -34,6 +34,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-native-web": "^0.14.10",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
@@ -43,6 +44,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-native": "^0.63.43",
+    "@types/react-redux": "^7.1.15",
     "@types/react-router-dom": "^5.1.7",
     "typescript": "^4.1.3"
   }
