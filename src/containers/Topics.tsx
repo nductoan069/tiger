@@ -15,7 +15,13 @@ const CounterComponent = () => {
         dispatch(Counter.decrement());
     }
 
-    return <Topics current={current} increment={incrementer} decrement={decrement}/>
+    return <Topics
+      current={current}
+      actions={{
+        increment: incrementer,
+        decrement: decrement,
+      }}
+    />
   }
 
 export default CounterComponent;
