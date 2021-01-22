@@ -1,11 +1,23 @@
 import React, { FC } from "react";
 import {
-    Text,
+    Text, View, TouchableOpacity
   } from "react-native";
 
-  const About: FC = () => {
+interface Props{
+  name:string;
+  setName:(name:string)=> void;
+}
+
+  const About: FC<Props> = (props) => {
     return(
-        <Text>About</Text>
+      <>
+        <Text>{props.name}</Text>
+        <TouchableOpacity
+        onPress={()=>{debugger; props.setName("test")}} 
+        >
+        <Text>Press Here</Text>
+        </TouchableOpacity>
+      </>
     );
 };
 

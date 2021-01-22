@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Topics from "../containers/Topics";
+import About from "../containers/NameContainer";
+import Topics from "../containers/TopicsContainer";
 import NoMatch from "./pages/NoMatch";
 
 function Routes() {
