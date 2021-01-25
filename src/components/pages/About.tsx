@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, useState  } from "react";
 import {
-    Text, View, TouchableOpacity
+    Text, View, TouchableOpacity, TextInput
   } from "react-native";
 
 interface Props{
@@ -9,11 +9,19 @@ interface Props{
 }
 
   const About: FC<Props> = (props) => {
+    const [name, setName] = useState("");
+
     return(
       <>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(text:string) => setName(text)}
+          value={name}
+        />
+        
         <Text>{props.name}</Text>
         <TouchableOpacity
-        onPress={()=>{props.setName("test")}} 
+        onPress={()=>{props.setName(name)}} 
         >
         <Text>Press Here</Text>
         </TouchableOpacity>
