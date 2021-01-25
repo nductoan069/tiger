@@ -5,10 +5,11 @@ import {
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
-import { Provider } from 'react-redux';
 
 import Header from './Header'
 import Routes from './Routes'
+
+import { Provider } from 'react-redux';
 import store from '../store';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         </Router>
       </SafeAreaView>
     </Provider>
+    
   );
 };
 

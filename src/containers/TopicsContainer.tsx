@@ -5,7 +5,7 @@ import * as Counter from '../modules/counter'
 import Topics from "../components/pages/Topics";
 
 const CounterComponent = () => {
-    const current = useSelector(state => state.value)
+    const current = useSelector(state => state.counter.value)
     const dispatch = useDispatch();
 
     function incrementer() {
