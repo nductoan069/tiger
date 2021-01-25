@@ -13,7 +13,7 @@ interface Props{
       <>
         <Text>{props.name}</Text>
         <TouchableOpacity
-        onPress={()=>{debugger; props.setName("test")}} 
+        onPress={()=>{props.setName("test")}} 
         >
         <Text>Press Here</Text>
         </TouchableOpacity>
