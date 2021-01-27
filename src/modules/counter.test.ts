@@ -28,7 +28,9 @@ describe("counter",()=>{
       })).toEqual({value: -1});
     });
     test('return object {value:0} when passed unknown action', () => {
-      expect(Counter.default(undefined,{type:"foo"} as Counter.Action)).toEqual({value: 0});
+      // @ts-ignore
+      const action={type:"foo"} as Counter.Action;
+      expect(Counter.default(undefined,action)).toEqual({value: 0});
     });
   })
 })

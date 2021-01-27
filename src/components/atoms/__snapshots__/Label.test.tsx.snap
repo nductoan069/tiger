@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="css-text-901oao r-fontFamily-9ovc40 r-fontSize-1ui5ee8 r-fontWeight-vw2c0b"
+  dir="auto"
+  onClick={[Function]}
+>
+  Facebook
+</div>
+`;
