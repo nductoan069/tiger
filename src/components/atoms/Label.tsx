@@ -16,7 +16,7 @@ interface Props {
 }
 
 function Label(props: Props) {
-  return <Text style={styles.label}>{props.children}</Text>
+  return <Text style={styles.label}>aaa{props.children}</Text>
 }
 
 export default Label;
