@@ -7,7 +7,7 @@ liff.init({ liffId: '1655616771-0P26KVbm' });
 async function login() {
     if (!liff.isLoggedIn()) {
         liff.login();
-    }
+    } 
     const profile = await liff.getProfile();
     console.log(profile);
 }

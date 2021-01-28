@@ -1,6 +1,6 @@
 import React, { FC, useState  } from "react";
 import {
-    Text, View, TouchableOpacity, TextInput
+    Text, TouchableOpacity, TextInput
   } from "react-native";
 
 interface Props{
