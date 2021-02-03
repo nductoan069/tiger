@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import liff from '@line/liff';
+import VConsole from 'vconsole';
+// @ts-ignore: Unreachable code error
+const vConsole = new VConsole (); 
 
 async function init() {
   try {
@@ -24,4 +27,7 @@ async function login() {
     ReactDOM.render(<App />, document.getElementById("root"));
 }
 
-init()
+init();
+
+
+
