@@ -160,6 +160,163 @@ async function sendImagemapMessages() {
       console.log('error', err);
     }
 };
+
+async function sendButtonTemplateMessages() {
+  try {
+    await liff.sendMessages([
+      {
+          "type": "template",
+          // @ts-ignore: Unreachable code error
+          "altText": "This is a buttons template",
+          "template": {
+              "type": "buttons",
+              "thumbnailImageUrl": "https://images.unsplash.com/photo-1463947628408-f8581a2f4aca?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c2t5fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80",
+              "imageAspectRatio": "rectangle",
+              "imageSize": "cover",
+              "imageBackgroundColor": "#FFFFFF",
+              "title": "Menu",
+              "text": "Please select",
+              "defaultAction": {
+                  "type": "uri",
+                  "label": "View detail",
+                  "uri": "http://youtube.com"
+              },
+              "actions": [
+                  {
+                    "type": "uri",
+                    "label": "View detail",
+                    "uri": "http://google.com"
+                  }
+              ]
+          }
+        }
+    ])
+    console.log('message sent');
+  } catch(err) {
+      console.log('error', err);
+    }
+};
+
+async function sendConfirmTemplateMessages() {
+  try {
+    await liff.sendMessages([
+      {
+        "type": "template",
+                  // @ts-ignore: Unreachable code error
+        "altText": "this is a confirm template",
+        "template": {
+            "type": "confirm",
+            "text": "Are you sure?",
+            "actions": [
+                {
+                  "type": "uri",
+                  "label": "Google",
+                  "uri": "http://google.com"
+                },
+                {
+                  "type": "uri",
+                  "label": "Youtube",
+                  "uri": "http://Youtube.com"
+                }
+            ]
+        }
+      }
+    ])
+    console.log('message sent');
+  } catch(err) {
+      console.log('error', err);
+    }
+};
+
+async function sendCarouselTemplateMessages() {
+  try {
+    await liff.sendMessages([
+      {
+        "type": "template",
+        // @ts-ignore: Unreachable code error
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+                {
+                  "thumbnailImageUrl": "https://images.unsplash.com/photo-1463947628408-f8581a2f4aca?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c2t5fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80",
+                  "imageBackgroundColor": "#FFFFFF",
+                  "title": "this is menu",
+                  "text": "description",
+                  "defaultAction": {
+                      "type": "uri",
+                      "label": "View detail",
+                      "uri": "http://example.com/page/123"
+                  },
+                  "actions": [
+                      {
+                          "type": "uri",
+                          "label": "View detail",
+                          "uri": "http://example.com/page/111"
+                      }
+                  ]
+                },
+                {
+                  "thumbnailImageUrl": "https://example.com/bot/images/item2.jpg",
+                  "imageBackgroundColor": "#000000",
+                  "title": "this is menu",
+                  "text": "description",
+                  "defaultAction": {
+                      "type": "uri",
+                      "label": "View detail",
+                      "uri": "http://example.com/page/222"
+                  },
+                  "actions": [
+                      {
+                          "type": "uri",
+                          "label": "View detail",
+                          "uri": "http://example.com/page/222"
+                      }
+                  ]
+                }
+            ],
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover"
+        }
+      }
+    ])
+    console.log('message sent');
+  } catch(err) {
+      console.log('error', err);
+    }
+};
+
+async function sendFlexMessages() {
+  try {
+    await liff.sendMessages([
+      {
+        "type": "flex",
+        // @ts-ignore: Unreachable code error
+        "altText": "this is a flex message",
+        "contents": {
+          "type": "bubble",
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "hello"
+              },
+              {
+                "type": "text",
+                "text": "world"
+              }
+            ]
+          }
+        }
+      }
+    ])
+    console.log('message sent');
+  } catch(err) {
+      console.log('error', err);
+    }
+};
   const About: FC<Props> = (props) => {
     const [name, setName] = useState("");
 
@@ -210,7 +367,27 @@ async function sendImagemapMessages() {
         <TouchableOpacity
         onPress={sendImagemapMessages} 
         >
-        <Text>Send Imagemap Message</Text>
+        <Text>TODO Send Imagemap Message</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={sendButtonTemplateMessages} 
+        >
+        <Text>Send Button Template Messages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={sendConfirmTemplateMessages} 
+        >
+        <Text>Send Confirm Template Messages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={sendCarouselTemplateMessages} 
+        >
+        <Text>Send Carousel Template Messages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={sendFlexMessages} 
+        >
+        <Text>Send Flex Messages</Text>
         </TouchableOpacity>
       </>
     );
