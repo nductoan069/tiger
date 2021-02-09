@@ -4,6 +4,8 @@ import {
   } from "react-native";
 import liff from '@line/liff';
 
+import FlexMessage from "./FlexMessage.json";
+
 interface Props{
   name:string;
   setName:(name:string)=> void;
@@ -293,23 +295,7 @@ async function sendFlexMessages() {
         "type": "flex",
         // @ts-ignore: Unreachable code error
         "altText": "this is a flex message",
-        "contents": {
-          "type": "bubble",
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "hello"
-              },
-              {
-                "type": "text",
-                "text": "world"
-              }
-            ]
-          }
-        }
+        "contents": FlexMessage
       }
     ])
     console.log('message sent');
